@@ -1,12 +1,12 @@
-let mon = () => document.querySelector(".money").value;
-let far  = () => Number(document.querySelector(".fare").value);
+let mon = () => document.querySelector(".money");
+let far  = () => document.querySelector(".fare");
 let calculate = document.querySelector(".btn");
 let answer = document.querySelector(".answer");
 
 class Calculator{
     constructor(one, two, three){
-        this._money = one || 0;
-        this._fare = two || 2.75;
+        this._money = +(one.toFixed(2)) || 0;
+        this._fare = +(two.toFixed(2)) || 2.75;
         this._ans = three;
     }
     
@@ -31,7 +31,7 @@ class Calculator{
 
         this._ans.innerText = `Money on Card: ${this._money.toFixed(2)} \n
         Ride Cost: ${this._fare.toFixed(2)} \n
-        To make it whole: ${addMoney.toFixed(2)} \n
+        To make it whole add: ${addMoney.toFixed(2)} \n
         Your number of rides will be: ${totalRides} \n
         \n To have ${totalRides + 1} rides add: ${addMplusRide.toFixed(2)}`
     }
