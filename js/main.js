@@ -1,5 +1,5 @@
-let mon = () => document.querySelector(".money");
-let far  = () => document.querySelector(".fare");
+ document.querySelector(".money");
+ document.querySelector(".fare");
 let calculate = document.querySelector(".btn");
 let answer = document.querySelector(".answer");
 
@@ -29,11 +29,11 @@ class Calculator{
         let totalRides = (this._money + addMoney) / this._fare;
         let addMplusRide = addMoney + this._fare;
 
-        this._ans.innerText = `Money on Card: ${this._money.toFixed(2)} \n
-        Ride Cost: ${this._fare.toFixed(2)} \n
-        To make it whole add: ${addMoney.toFixed(2)} \n
-        Your number of rides will be: ${totalRides} \n
-        \n To have ${totalRides + 1} rides add: ${addMplusRide.toFixed(2)}`
+        this._ans.innerHTML = `Money on Card: <span>${this._money.toFixed(2)}</span>$ <br>`
+         + `Ride Cost: <span>${this._fare.toFixed(2)}</span>$ <br>`
+         + `To make it whole add: <span>${addMoney.toFixed(2)}</span>$ <br>`
+         + `You will have: <span>${totalRides.toFixed()}</span> rides!<br>`
+         + `To have ${(totalRides + 1).toFixed()} rides add: <span>${addMplusRide.toFixed(2)}</span>$`
     }
 
 }
@@ -41,9 +41,10 @@ class Calculator{
 
 
 calculate.addEventListener("click", button =>{
+    button.stopPropagation()
     let money = Number(document.querySelector(".money").value);
     let fare = Number(document.querySelector(".fare").value);
     let calculator = new Calculator(money, fare, answer);
-    calculator.clear();
     calculator.compute();
+    document.querySelector(".money").value = ""
 })

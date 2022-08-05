@@ -10,7 +10,7 @@ html {
 
 .calculator {
     margin: auto;
-    max-width: 80%;
+    max-width: 30%;
     border: 2px solid red;
     display: flex;
     flex-direction: column;
@@ -32,6 +32,9 @@ html {
     color: #0f1923;
     padding: 1.5rem;
     cursor: pointer;
+    border:4px solid #888888;
+    outline:none;
+    box-shadow:  -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0,0,0,0.2);
 }
 
 .btn:hover {
@@ -40,5 +43,18 @@ html {
     color: #ece8e1;
 }
 
+span {
+    color: blue;
+}
 
-
+@media only screen and (max-width: 500px) {
+    .calculator{
+        max-width: 70%;
+        min-width: 30rem;
+    }
+}
+@media (min-width: 501px) and (max-width: 800px) {
+    .calculator{
+        max-width: 55%;
+    }
+}
