@@ -1,28 +1,33 @@
- document.querySelector(".money");
- document.querySelector(".fare");
+document.querySelector(".money");
+document.querySelector(".fare");
 let calculate = document.querySelector(".btn");
 let answer = document.querySelector(".answer");
 
 class Calculator{
-    constructor(one, two, three){
-        this._money = +(one.toFixed(2)) || 0;
-        this._fare = +(two.toFixed(2)) || 2.75;
-        this._ans = three;
+    constructor(moneyOnCard, fareRate, displayAnswer){
+        this._money = +(moneyOnCard.toFixed(2)) || 0;
+        this._fare = +(fareRate.toFixed(2)) || 2.75;
+        this._ans = displayAnswer;
     }
-    
-    clear(){
-        this._ans.textContent = "";
+
+    get moneyOnCard(){
+        return this._money
+    }
+    get fareRate(){
+        return this._fare
+    }
+    get displayAnswer(){
+        return this._ans
     }
 
     compute(){
+        if (isNaN(this._money) || isNaN(this._fare) || this._money < 0 || this._fare < 0) return;
         let money = this._money * 100;
         let fare  = this._fare * 100;
         let diff = 0
-        if (isNaN(this._money) || isNaN(this._fare)) return;
         
         for (let indx = money; indx < money + 10000; indx++) {
-            if(indx % fare === 0){break;}
-            diff = indx - money + 1;
+            if(indx % fare === 0){diff = indx - money; break;}
         };
 
         let addMoney = diff / 100;
@@ -42,9 +47,17 @@ class Calculator{
 
 calculate.addEventListener("click", button =>{
     button.stopPropagation()
+
+    // get the values from the input
     let money = Number(document.querySelector(".money").value);
     let fare = Number(document.querySelector(".fare").value);
+
+    //create an instance of Calculator class with our input values
     let calculator = new Calculator(money, fare, answer);
+
+    //use the method to compute the data
     calculator.compute();
+
+    //clear money input value
     document.querySelector(".money").value = ""
 })
