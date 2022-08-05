@@ -1,0 +1,44 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    font-size: 1.6rem;
+}
+
+.calculator {
+    margin: auto;
+    max-width: 80%;
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+.calculator * {
+    margin-bottom: 1.5rem;
+}
+.money, .fare {
+    max-width: 16rem;
+}
+
+.btn {
+    font: 700  1.8rem "Multi";
+    border-radius: 25px;
+    text-transform: uppercase;
+    background: #ece8e1;
+    color: #0f1923;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transition: 0.3s ease-out all;
+    background: blueviolet;
+    color: #ece8e1;
+}
+
+
+
