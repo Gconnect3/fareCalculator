@@ -38,7 +38,7 @@ class Calculator{
          + `Ride Cost: <span>${this._fare.toFixed(2)}</span>$ <br>`
          + `To make it whole add: <span>${addMoney.toFixed(2)}</span>$ <br>`
          + `You will have: <span>${totalRides.toFixed()}</span> rides!<br>`
-         + `To have ${(totalRides + 1).toFixed()} rides add: <span>${addMplusRide.toFixed(2)}</span>$`
+         + `To have <span>${(totalRides + 1).toFixed()}</span> rides add: <span>${addMplusRide.toFixed(2)}</span>$`
     }
 
 }
