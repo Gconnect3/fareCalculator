@@ -8,10 +8,6 @@ html {
     font-size: 1.6rem;
 }
 
-h1{
- font-size: 2rem;
-}
-
 input{
     height: 3rem;
 }
@@ -26,7 +22,7 @@ input{
     padding: 3rem;
 }
 .calculator * {
-    margin-bottom: 1.8rem;
+    margin-bottom: 2rem;
 }
 .money, .fare {
     max-width: 16rem;
@@ -55,6 +51,12 @@ input{
 
 span {
     color: blue;
+}
+h1,p{
+    margin-top: -.75rem;
+}
+h1{
+    font-size: 2rem;
 }
 
 @media only screen and (max-width: 500px) {
