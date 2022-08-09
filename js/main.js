@@ -21,9 +21,9 @@ class Calculator{
     }
 
     compute(){
-        if (isNaN(this._money) || isNaN(this._fare) || this._money < 0 || this._fare < 0) return;
-        let money = this._money * 100;
-        let fare  = this._fare * 100;
+        if (isNaN(this.moneyOnCard) || isNaN(this.fareRate) || this.moneyOnCard < 0 || this.fareRate < 0) return;
+        let money = this.moneyOnCard * 100;
+        let fare  = this.fareRate * 100;
         let diff = 0
         
         for (let indx = money; indx < money + 10000; indx++) {
@@ -31,11 +31,11 @@ class Calculator{
         };
 
         let addMoney = diff / 100;
-        let totalRides = (this._money + addMoney) / this._fare;
-        let addMplusRide = addMoney + this._fare;
+        let totalRides = (this.moneyOnCard + addMoney) / this.fareRate;
+        let addMplusRide = addMoney + this.fareRate;
 
-        this._ans.innerHTML = `Money on Card: <span>${this._money.toFixed(2)}</span>$ <br>`
-         + `Ride Cost: <span>${this._fare.toFixed(2)}</span>$ <br>`
+        this._ans.innerHTML = `Money on Card: <span>${this.moneyOnCard.toFixed(2)}</span>$ <br>`
+         + `Ride Cost: <span>${this.fareRate.toFixed(2)}</span>$ <br>`
          + `To make it whole add: <span>${addMoney.toFixed(2)}</span>$ <br>`
          + `You will have: <span>${totalRides.toFixed()}</span> rides!<br>`
          + `To have <span>${(totalRides + 1).toFixed()}</span> rides add: <span>${addMplusRide.toFixed(2)}</span>$`
