@@ -26,8 +26,8 @@ class Calculator{
     }
 
     compute(){
-        if (isNaN(this.moneyOnCard) || isNaN(this.fareRate) || this.moneyOnCard < 0 || this.fareRate < 0) return;
-        
+        if (isNaN(this.moneyOnCard) || isNaN(this.fareRate) || isNaN(this.extra) || this.moneyOnCard < 0 || this.fareRate < 0 || this.extra < 0) return;
+
         let money = (this.extra + this.moneyOnCard) * 100;
         let fare  = this.fareRate * 100;
         let diff = 0
