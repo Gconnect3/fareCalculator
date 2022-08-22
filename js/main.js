@@ -5,10 +5,10 @@ let calculate = document.querySelector(".btn");
 let answer = document.querySelector(".answer");
 
 class Calculator{
-    constructor(moneyOnCard, fareRate, extra, displayAnswer){
+    constructor(moneyOnCard, extra, fareRate, displayAnswer){
         this._money = +(moneyOnCard.toFixed(2)) || 0;
         this._fare = +(fareRate.toFixed(2)) || 2.75;
-        this._extra = +(extra.toFixed(2) || 0)
+        this._extra = +(extra.toFixed(2)) || 0;
         this._ans = displayAnswer;
     }
 
@@ -27,6 +27,7 @@ class Calculator{
 
     compute(){
         if (isNaN(this.moneyOnCard) || isNaN(this.fareRate) || this.moneyOnCard < 0 || this.fareRate < 0) return;
+        
         let money = (this.extra + this.moneyOnCard) * 100;
         let fare  = this.fareRate * 100;
         let diff = 0
@@ -59,7 +60,7 @@ calculate.addEventListener("click", button =>{
     let extra = Number(document.querySelector(".extra").value)
 
     //create an instance of Calculator class with our input values
-    let calculator = new Calculator(money, fare, extra, answer);
+    let calculator = new Calculator(money, extra, fare, answer);
 
     //use the method to compute the data
     calculator.compute();

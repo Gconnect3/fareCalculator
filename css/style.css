@@ -24,7 +24,7 @@ input{
 .calculator * {
     margin-bottom: 2rem;
 }
-.money, .fare, .extra {
+.money, .extra, .fare {
     max-width: 16rem;
 }
 
